@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HmindexService } from '../services/hmindex.service';
 
 @Component({
   selector: 'app-homeindex',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeindexComponent implements OnInit {
 
-  constructor() { }
+  data = [];
+
+  constructor(private hmindexService:HmindexService) { }
 
   ngOnInit() {
+    this.getIndexHomeData();
   }
+
+  getIndexHomeData() {
+    
+    this.hmindexService.getHomeData().subscribe(data => {
+      this.data.push(data);
+      console.log(this.data);
+      }, error => console.error(error));
+
+    }
+  
 
 }

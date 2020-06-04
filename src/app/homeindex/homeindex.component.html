@@ -193,34 +193,34 @@
                                                                      <option value="7000">$7,000</option>
                                                                      <option value="9000">$9,000</option>
                                                                  </select>
-                                                             </div>
-                                                             <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                 <div class="find-home-item">
-                                         <!-- shop-filter -->
-                                         <div class="shop-filter">
-                                             <div class="price_filter">
-                                                 <div class="price_slider_amount">
-                                                     <input type="submit" value="Price range :" />
-                                                     <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                                                 </div>
-                                                 <div id="slider-range1"></div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                                             </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                                                <div class="find-home-item">
+                                                                    <!-- shop-filter -->
+                                                                    <div class="shop-filter">
+                                                                        <div class="price_filter">
+                                                                            <div class="price_slider_amount">
+                                                                                <input type="submit" value="Price range :" />
+                                                                                <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                                                            </div>
+                                                                            <div id="slider-range1"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                                                   <div class="find-home-item">
                                                                   <!-- shop-filter -->
-                                         <div class="shop-filter">
-                                             <div class="price_filter">
-                                                 <div class="price_slider_amount">
-                                                     <input type="submit" value="Land Area :" />
-                                                     <input type="text" id="sqft" name="area" placeholder="Add Your Area" />
-                                                 </div>
-                                                 <div id="slider-range2"></div>
-                                             </div>
-                                         </div>
-                                         </div>
+                                                                <div class="shop-filter">
+                                                                    <div class="price_filter">
+                                                                        <div class="price_slider_amount">
+                                                                            <input type="submit" value="Land Area :" />
+                                                                            <input type="text" id="sqft" name="area" placeholder="Add Your Area" />
+                                                                        </div>
+                                                                        <div id="slider-range2"></div>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                                                  <input type="text" class="ere-property-identity form-control search-field" data-default-value="" value="" name="property_identity" placeholder="Property ID" />
@@ -252,293 +252,33 @@
             <div class="featured-flat">
                 <div class="row">
                     <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-12" *ngFor="let mydata of data[0]">
                         <div class="flat-item">
                             <div class="flat-item-image">
                                 <span class="for-sale">For Sale</span>
-                                <a href="#"><img src="assets/images/flat/1.jpg" alt=""></a>
+                                <a href="#"><img style="height:250px;" src="http://localhost/ExposureMedia/admin/public/uploads/homes/{{mydata.featured_image}}" alt=""></a>
                                 <div class="flat-link">
                                     <a href="#">More Details</a>
                                 </div>
                                 <ul class="flat-desc">
                                     <li>
                                         <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
+                                        <span>{{mydata.area}} sqft</span>
                                     </li>
                                     <li>
                                         <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
+                                        <span>{{mydata.bedroom}}</span>
                                     </li>
                                     <li>
                                         <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
+                                        <span>{{mydata.bathroom}}</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="flat-item-info">
                                 <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <a href="#"><img src="assets/images/flat/2.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale rent">For rent</span>
-                                <a href="#"><img src="assets/images/flat/3.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <a href="#"><img src="assets/images/flat/4.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale">For Sale</span>
-                                <a href="properties-details.html"><img src="assets/images/flat/5.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <a href="#"><img src="assets/images/flat/6.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale rent">For rent</span>
-                                <a href="#"><img src="assets/images/flat/7.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <a href="#"><img src="assets/images/flat/8.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
-                                </div>
-                                <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-12 d-none d-lg-block">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale">For Sale</span>
-                                <a href="#"><img src="assets/images/flat/9.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="#">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="assets/images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="assets/assets/images/icons/6.png" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="#">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
+                                    <h5><a href="#">{{mydata.title}}</a></h5>
+                                    <span class="price">${{mydata.price}}</span>
                                 </div>
                                 <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                             </div>
