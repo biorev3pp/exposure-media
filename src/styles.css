@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600,700,800");
+@import './assets/css/all.min.css';
+@import './assets/css/animate.css';
+@import './assets/css/bootstrap.min4.css';
+@import './assets/css/default.css';
+/* @import './assets/css/core.css'; */
+@import './assets/css/icomoon.css';
+@import './assets/css/jquery-ui.min.css';
+@import './assets/css/light-gallery.css';
+@import './assets/css/nivo-slider.css';
+@import './assets/css/slider.css';
+@import './assets/css/style.css';
+@import './assets/css/style3.css';
