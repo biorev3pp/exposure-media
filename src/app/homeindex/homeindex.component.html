@@ -1,4 +1,4 @@
-   <!-- SLIDER SECTION START -->
+ <!-- SLIDER SECTION START -->
    <div class="slider-2 bg-3 ">
         <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
             <div class="row search-boxes">
@@ -31,9 +31,12 @@
                         <div class="find-homes">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
+                                <form ngNoForm action="http://localhost:4200/homeList" method="GET">
                                     <div class="find-home-item">
-                                        <input type="text" name="developments" placeholder="DEVELOPMENT, BUILDER, ADDRESS, ZIP, NEIGHBORHOOD, STYLE" /> <a href="#" class="prevent-default search-standard"><i class="icon-search2"></i></a>
+                                        <input type="text" name="devSearch" placeholder="DEVELOPMENT, BUILDER, LOCATION" [(ngModel)]="searchHome"/> 
+                                        <button type="submit" class="prevent-default search-standard"><i class="icon-search2"></i></button>
                                     </div>
+                                </form>
                                 </div>
                                 <div class="col-sm-12 col-xs-12">
                                     <div class="find-home-item">
@@ -193,34 +196,34 @@
                                                                      <option value="7000">$7,000</option>
                                                                      <option value="9000">$9,000</option>
                                                                  </select>
-                                                            </div>
-                                                            <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                <div class="find-home-item">
-                                                                    <!-- shop-filter -->
-                                                                    <div class="shop-filter">
-                                                                        <div class="price_filter">
-                                                                            <div class="price_slider_amount">
-                                                                                <input type="submit" value="Price range :" />
-                                                                                <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                                                                            </div>
-                                                                            <div id="slider-range1"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                             </div>
+                                                             <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                                                 <div class="find-home-item">
+                                         <!-- shop-filter -->
+                                         <div class="shop-filter">
+                                             <div class="price_filter">
+                                                 <div class="price_slider_amount">
+                                                     <input type="submit" value="Price range :" />
+                                                     <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                                 </div>
+                                                 <div id="slider-range1"></div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                                             </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                                                   <div class="find-home-item">
                                                                   <!-- shop-filter -->
-                                                                <div class="shop-filter">
-                                                                    <div class="price_filter">
-                                                                        <div class="price_slider_amount">
-                                                                            <input type="submit" value="Land Area :" />
-                                                                            <input type="text" id="sqft" name="area" placeholder="Add Your Area" />
-                                                                        </div>
-                                                                        <div id="slider-range2"></div>
-                                                                    </div>
-                                                                </div>
-                                                                </div>
+                                         <div class="shop-filter">
+                                             <div class="price_filter">
+                                                 <div class="price_slider_amount">
+                                                     <input type="submit" value="Land Area :" />
+                                                     <input type="text" id="sqft" name="area" placeholder="Add Your Area" />
+                                                 </div>
+                                                 <div id="slider-range2"></div>
+                                             </div>
+                                         </div>
+                                         </div>
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                                                  <input type="text" class="ere-property-identity form-control search-field" data-default-value="" value="" name="property_identity" placeholder="Property ID" />
@@ -355,7 +358,7 @@
     <div class="directory-listing-google-map-area">
         <div id="gmap"></div>
         <!--  MAPSEARCH AREA END -->
-
+<br>
             <!-- NEIGHBORHOOD AREA START -->
             <div class="blog-area pb-60 pt-115">
                 <div class="container">
@@ -366,12 +369,12 @@
                                 
                             </div>
                         </div>
-                    </div>
+                    </div><br>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="blog-carousel">
+                        <!-- <div class="col-xl-12"> -->
+                            <!-- <div class="blog-carousel"> -->
                                 <!-- blog-item -->
-                                <div class="col">
+                                <div class="col-md-3">
                                     <article class="blog-item bg-gray">
                                         <div class="blog-image">
                                             <a href="#"><img src="assets/images/nbrhoods/1.jpg" alt=""></a>
@@ -388,7 +391,7 @@
                                     </article>
                                 </div>
                                 <!-- blog-item -->
-                                <div class="col">
+                                <div class="col-md-3">
                                     <article class="blog-item bg-gray">
                                         <div class="blog-image">
                                             <a href="single-blog.html"><img src="assets/images/nbrhoods/2.jpg" alt=""></a>
@@ -405,7 +408,7 @@
                                     </article>
                                 </div>
                                 <!-- blog-item -->
-                                <div class="col">
+                                <div class="col-md-3">
                                     <article class="blog-item bg-gray">
                                         <div class="blog-image">
                                             <a href="single-blog.html"><img src="assets/images/nbrhoods/3.jpg" alt=""></a>
@@ -422,7 +425,7 @@
                                     </article>
                                 </div>
                                 <!-- blog-item -->
-                                <div class="col">
+                                <div class="col-md-3">
                                     <article class="blog-item bg-gray">
                                         <div class="blog-image">
                                             <a href="#"><img src="assets/images/nbrhoods/2.jpg" alt=""></a>
@@ -438,8 +441,8 @@
                                         </div>
                                     </article>
                                 </div>
-                            </div>
-                        </div>
+                            <!-- </div> -->
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -449,85 +452,63 @@
              <div class="brand-area pb-115">
                 <div class="container">
                     <div class="row">
-                    	<div class="col-12">
+                    	<!-- <div class="col-12"> -->
                             <div class="section-title-2 text-center">
                                 <h2>AUSTIN'S DEVELOPERS</h2>
                                 
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="brand-carousel">
+                        <!-- </div> -->
+                        <div class="row">
+                            <!-- <div class="brand-carousel"> -->
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/1.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/2.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/3.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/4.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/5.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/brand/1.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col">
+                                <div class="col-md-2">
                                     <div class="brand-item">
                                         <img src="assets/images/brand/4.png" alt="">
                                     </div>
                                 </div>
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
             </div>
             <!-- BRAND AREA END -->
 
-              <!-- SUBSCRIBE AREA START -->
-              <div class="subscribe-area bg-blue call-to-bg plr-140 ptb-50">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-12">
-                            <div class="section-title text-white">
-                                <h3>SUBSCRIBE</h3>
-                                <h2 class="h1">NEWSLETTER</h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-8 col-12">
-                            <div class="subscribe">
-                                <form action="#">
-                                    <input type="text" name="subscribe" placeholder="Enter your email here...">
-                                    <button type="submit" value="send">Send</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- SUBSCRIBE AREA END -->
     
 
             

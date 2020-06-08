@@ -8,7 +8,9 @@ import { HmindexService } from '../services/hmindex.service';
 })
 export class HomeindexComponent implements OnInit {
 
+  searchHome:string = "";
   data = [];
+  route: any;
 
   constructor(private hmindexService:HmindexService) { }
 
@@ -25,5 +27,4 @@ export class HomeindexComponent implements OnInit {
 
     }
   
-
 }

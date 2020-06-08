@@ -1,0 +1,44 @@
+<!-- FEATURED FLAT AREA START -->
+<div class="featured-flat-area pt-115 pb-80">
+    <div class="container">
+        
+        <div class="featured-flat">
+            <div class="row">
+                <!-- flat-item -->
+                <div class="col-lg-4 col-md-6 col-12" *ngFor="let mydata of search | search:'title,builder,location':searchHome">
+                    <div class="flat-item">
+                        <div class="flat-item-image">
+                            <span class="for-sale">For Sale</span>
+                            <a href="#"><img style="height:250px;" src="http://localhost/ExposureMedia/admin/public/uploads/homes/{{mydata.featured_image}}" alt=""></a>
+                            <div class="flat-link">
+                                <a href="#">More Details</a>
+                            </div>
+                            <ul class="flat-desc">
+                                <li>
+                                    <img src="assets/images/icons/4.png" alt="">
+                                    <span>{{mydata.area}} sqft</span>
+                                </li>
+                                <li>
+                                    <img src="assets/images/icons/5.png" alt="">
+                                    <span>{{mydata.bedroom}}</span>
+                                </li>
+                                <li>
+                                    <img src="assets/images/icons/6.png" alt="">
+                                    <span>{{mydata.bathroom}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flat-item-info">
+                            <div class="flat-title-price">
+                                <h5><a href="#">{{mydata.title}}</a></h5>
+                                <span class="price">${{mydata.price}}</span>
+                            </div>
+                            <p><img src="assets/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FEATURED FLAT AREA END -->
