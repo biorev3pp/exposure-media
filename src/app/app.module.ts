@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from  '@angular/forms';
+import { HmindexService } from './services/hmindex.service';
 
 // Search Module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -25,9 +26,10 @@ import { HomeListComponent } from './home-list/home-list.component';
     AppRoutingModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [HmindexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

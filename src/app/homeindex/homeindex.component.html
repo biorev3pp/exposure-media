@@ -33,7 +33,7 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                 <form ngNoForm action="http://localhost:4200/homeList" method="GET">
                                     <div class="find-home-item">
-                                        <input type="text" name="devSearch" placeholder="DEVELOPMENT, BUILDER, LOCATION" [(ngModel)]="searchHome"/> 
+                                        <input type="text" name="devSearch" placeholder="DEVELOPMENT, BUILDER, LOCATION"/> 
                                         <button type="submit" class="prevent-default search-standard"><i class="icon-search2"></i></button>
                                     </div>
                                 </form>
@@ -93,11 +93,13 @@
                          <div class="bg-dark-left wpb_column vc_column_container vc_col-sm-9 vc_col-has-fill">
                              <div class="column-inner vc_custom_1485091686429">
                                  <div class="wpb_wrapper">
+                                     <form id="filterHomes">
                                      <div class="search-properties clearfix show-status-tab style-default-small color-light">
+                                         <form action="" #filter = "ngForm" (ngSubmit) = "onClickSubmit(filter.value)">
                                          <div class="form-search-wrap">
                                              <div class="form-search-inner">
                                                  <div class="search-content">
-                                                     <div data-href="#" class="search-properties-form">
+                                                    <div data-href="#" class="search-properties-form">
                                                          <div class="search-status-tab">
                                                              <input class="search-field" type="hidden" name="status" value="for-rent" data-default-value="" />
                                                              <button type="button" data-value="for-rent" class="btn-status-filter active">For Rent</button>
@@ -105,62 +107,31 @@
                                                          </div>
                                                          <div class="row">
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                 <select name="type" title="Property Types" class="search-field form-control" data-default-value="">
-                                                                     <option value="apartment">Apartment</option>
-                                                                     <option value="bar">Bar</option>
-                                                                     <option value="cafe">Cafe</option>
-                                                                     <option value="car-wash">Car Wash</option>
-                                                                     <option value="casino">Casino</option>
-                                                                     <option value="farm">Farm</option>
-                                                                     <option value="hotel">Hotel</option>
-                                                                     <option value="house">House</option>
-                                                                     <option value="land">Land</option>
-                                                                     <option value="lodging">Lodging</option>
-                                                                     <option value="restaurant">Restaurant</option>
-                                                                     <option value="spa">Spa</option>
-                                                                     <option value="store">Store</option>
-                                                                     <option value="villa">Villa</option>
-                                                                     <option value="" selected> All Types</option>
+                                                                    <select name="type" ngModel title="Property Types" id="type" class="search-field form-control" data-default-value="">              <!--[(ngModel)]="typeSelected"-->
+                                                                    <option value=""> Any Type</option> 
+                                                                    <option *ngFor="let hmfilter of groupFilter" [value]="hmfilter.type">{{hmfilter.type}}</option>
                                                                  </select>
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                 <input type="text" class="form-control search-field" data-default-value="" value="" name="title" placeholder="Title" />
+                                                                 <input type="text" class="form-control search-field" id="title" ngModel data-default-value="" value="" name="title" placeholder="Title" />
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                 <input type="text" class="ere-location form-control search-field" data-default-value="" value="" name="address" placeholder="Address" />
+                                                                 <input type="text" class="ere-location form-control search-field" id="address" ngModel data-default-value="" value="" name="address" placeholder="Address" />
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                 <select name="bedrooms" title="Property Bedrooms" class="search-field form-control" data-default-value="">
+                                                                 <select name="bedroom" ngModel id="bedroom" title="Property Bedrooms" class="search-field form-control" data-default-value="">
                                                                      <option value=""> Any Bedrooms</option>
-                                                                     <option value="1"> 1</option>
-                                                                     <option value="2"> 2</option>
-                                                                     <option value="3"> 3</option>
-                                                                     <option value="4"> 4</option>
-                                                                     <option value="5"> 5</option>
-                                                                     <option value="6"> 6</option>
-                                                                     <option value="7"> 7</option>
-                                                                     <option value="8"> 8</option>
-                                                                     <option value="9"> 9</option>
-                                                                     <option value="10"> 10</option>
+                                                                     <option *ngFor="let hmfilter of groupFilter" [value]="hmfilter.bedroom">{{hmfilter.bedroom}}</option>
                                                                  </select>
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                 <select name="bathrooms" title="Property Bathrooms" class="search-field form-control" data-default-value="">
+                                                                 <select name="bathroom" ngModel id="bathroom" title="Property Bathrooms" class="search-field form-control" data-default-value="">
                                                                      <option value=""> Any Bathrooms</option>
-                                                                     <option value="1"> 1</option>
-                                                                     <option value="2"> 2</option>
-                                                                     <option value="3"> 3</option>
-                                                                     <option value="4"> 4</option>
-                                                                     <option value="5"> 5</option>
-                                                                     <option value="6"> 6</option>
-                                                                     <option value="7"> 7</option>
-                                                                     <option value="8"> 8</option>
-                                                                     <option value="9"> 9</option>
-                                                                     <option value="10"> 10</option>
+                                                                     <option *ngFor="let hmfilter of groupFilter" [value]="hmfilter.bathroom">{{hmfilter.bathroom}}</option>
                                                                  </select>
                                                              </div>
                                                              <div class="col-md-2 col-sm-3 col-xs-12 form-group">
-                                                                 <select name="min-price" title="Min Price" class="search-field form-control" data-default-value="">
+                                                                 <select name="min-price" id="minPrice" title="Min Price" class="search-field form-control" data-default-value="">
                                                                      <option value=""> Min Price</option>
                                                                      <option value="0">$0</option>
                                                                      <option value="100">$100</option>
@@ -179,7 +150,7 @@
                                                                  </select>
                                                              </div>
                                                              <div class="col-md-2 col-sm-3 col-xs-12 form-group">
-                                                                 <select name="max-price" title="Max Price" class="search-field form-control" data-default-value="">
+                                                                 <select name="max-price" id="maxPrice" title="Max Price" class="search-field form-control" data-default-value="">
                                                                      <option value=""> Max Price</option>
                                                                      <option value="200">$200</option>
                                                                      <option value="400">$400</option>
@@ -199,44 +170,46 @@
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                                                  <div class="find-home-item">
-                                         <!-- shop-filter -->
-                                         <div class="shop-filter">
-                                             <div class="price_filter">
-                                                 <div class="price_slider_amount">
-                                                     <input type="submit" value="Price range :" />
-                                                     <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                                                 </div>
-                                                 <div id="slider-range1"></div>
-                                             </div>
-                                         </div>
-                                     </div>
+                                                                    <!-- shop-filter -->
+                                                                    <div class="shop-filter">
+                                                                        <div class="price_filter">
+                                                                            <div class="price_slider_amount">
+                                                                                <input type="submit" value="Price range :" />
+                                                                                <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                                                            </div>
+                                                                            <div id="slider-range1"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                                                  <div class="find-home-item">
+                                                                <div class="find-home-item">
                                                                   <!-- shop-filter -->
-                                         <div class="shop-filter">
-                                             <div class="price_filter">
-                                                 <div class="price_slider_amount">
-                                                     <input type="submit" value="Land Area :" />
-                                                     <input type="text" id="sqft" name="area" placeholder="Add Your Area" />
-                                                 </div>
-                                                 <div id="slider-range2"></div>
-                                             </div>
-                                         </div>
-                                         </div>
+                                                                    <div class="shop-filter">
+                                                                        <div class="price_filter">
+                                                                            <div class="price_slider_amount">
+                                                                                <input type="submit" value="Land Area :" />
+                                                                                <input type="text" id="sqft" name="area" placeholder="Add Your Area" />
+                                                                            </div>
+                                                                            <div id="slider-range2"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                              </div>
                                                              <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                                                  <input type="text" class="ere-property-identity form-control search-field" data-default-value="" value="" name="property_identity" placeholder="Property ID" />
                                                              </div>
                                                              <div class="col-md-12 col-sm-6 col-xs-12 form-group submit-search-form pull-right">
-                                                                 <button type="button" class="ere-advanced-search-btn"><i class="fa fa-search"></i> Search</button>
+                                                                 <button type="submit" class="ere-advanced-search-btn"><i class="fa fa-search"></i> Search</button>
                                                              </div>
                                                          </div>
                                                      </div>
                                                  </div>
                                              </div>
                                          </div>
+                                         </form>
                                      </div>
+                                     </form>
                                  </div>
                              </div>
                          </div>
@@ -357,8 +330,9 @@
     <!-- DICECTORY LISTING GOOGLE MAP AREA START -->
     <div class="directory-listing-google-map-area">
         <div id="gmap"></div>
-        <!--  MAPSEARCH AREA END -->
-<br>
+    </div>
+        <!--  MAPSEARCH AREA END --><br>
+
             <!-- NEIGHBORHOOD AREA START -->
             <div class="blog-area pb-60 pt-115">
                 <div class="container">
@@ -493,15 +467,15 @@
                                 <!-- brand-item -->
                                 <div class="col-md-2">
                                     <div class="brand-item">
-                                        <img src="assets/images/brand/1.png" alt="">
+                                        <img src="assets/images/1.png" alt="">
                                     </div>
                                 </div>
                                 <!-- brand-item -->
-                                <div class="col-md-2">
+                                <!-- <div class="col-md-2">
                                     <div class="brand-item">
-                                        <img src="assets/images/brand/4.png" alt="">
+                                        <img src="assets/images/4.png" alt="">
                                     </div>
-                                </div>
+                                </div> -->
                             <!-- </div> -->
                         </div>
                     </div>
